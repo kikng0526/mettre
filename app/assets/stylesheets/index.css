@@ -14,13 +14,44 @@ header {
 
 /* 検索ボタン */
 .search_container{
- padding-left: 40px;
+ padding-left: 100px;
 }
 
 .input-text{
   padding: 10px;
   border-radius: 10px;
 }
+
+input.font-awesome {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+}
+
+ul {
+  list-style: none;
+  display: inline-block;
+  padding-right: 100px;
+}
+
+li {
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+li+ li {
+  border-left: 1px solid #333;
+}
+
+.nav{
+  text-decoration: none;
+  font-size: small;
+  color: black;
+  display: flex;
+}
+
 
 /* 検索ボタン */
 
