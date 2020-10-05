@@ -77,4 +77,18 @@ img {
   width: 300px;
 }
 
+.text-size {
+  padding-top: 190px;
+  padding-left: 50px;
+}
+
+li + li {
+  border-left: none;
+}
+
+li {
+  font-size: 12px;
+  list-style: none;
+}
+
 
