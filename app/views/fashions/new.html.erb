@@ -13,7 +13,9 @@
       <form method="get" action="#" class="search_container">
         <input type="text" size="25" class = "input-text font-awesome" placeholder="&#xF002;　fashion検索">
       </form>
-        <h1 class = "title"><a href= "/"> <%= image_tag 'logo.png' %></a></h1>
+        <h1 class = "title"><a href= "/"> 
+        <%# <%= image_tag 'logo.png' %> 
+        </a></h1>
       <div class = "navbar">
         <ul class='nav-lists'>
           <% if user_signed_in? %>
@@ -31,18 +33,96 @@
     <main>
     <%= form_with model: @fashion, local: true do |f| %>
     <%# 画像 %>
-
     <div class = "image-area">
-      <div class="image-text">
-        コーディネート
+      <div class = "image-text">
+        <a>コーディネート画像</a>
+        <div class = "text-size">
+          <li>推奨サイズ：300px x 400px</li>
+          <li>容量10MB未満</li>
+        </div>
       </div>
-      <div id = "image-list"></div>
       <div class="click-upload">
         <%= f.file_field :image, id:"item-image", placeholder: "画像選択" %> 
-        <div id = "image-list"></div>
+          <div id = "image-list" class = "java">
+            <%# ここにjavascriptが入ります %>
+          </div>
       </div>
     </div>
-      <%# 画像 %>
+    <%# 画像 %>
+
+    <%# コーディネート詳細%>
+
+    <%# コーデ名 %>
+    <div class = "text-area">
+      <div class = "code-text">
+        <a>コーディネート詳細</a>
+      </div>
+        <div class = "code-size">
+        <a class = "code-title">コーディネート名(40字以内)</a>
+        <%= f.text_field :title, class:"items-text", id:"item-name", maxlength:"40" %>
+        </div>
+    </div>
+    <%# コーデ名 %>
+
+    <%# コーディネート説明文 %>
+    <div class = "text-area">
+      <div class = "code-size">
+        <a class = "code-title">コーディネート紹介文</a>
+        <%= f.text_area :text, class:"items-area", id:"item-name"%>
+      </div>
+    </div>
+    <%# コーディネート説明文 %>
+
+    <%# アクセサリー %>
+      <div class = "text-area">
+      <div class = "code-size">
+        <a class = "code-title">アクセサリー類</a>
+        <%= f.text_field :accessories, class:"items-text", id:"item-name"%>
+      </div>
+    </div>
+    <%# アクセサリー %>
+
+    <%# トップス %>
+      <div class = "text-area">
+      <div class = "code-size">
+        <a class = "code-title">トップス</a>
+        <%= f.text_field :tops, class:"items-text", id:"item-name"%>
+      </div>
+    </div>
+    <%# トップス %>
+
+    <%# アウター %>
+      <div class = "text-area">
+      <div class = "code-size">
+        <a class = "code-title">アウター</a>
+        <%= f.text_field :outer, class:"items-text", id:"item-name"%>
+      </div>
+    </div>
+    <%# アウター %>
+
+    <%# パンツ %>
+      <div class = "text-area">
+      <div class = "code-size">
+        <a class = "code-title">パンツ</a>
+        <%= f.text_field :pants, class:"items-text", id:"item-name"%>
+      </div>
+    </div>
+    <%# パンツ %>
+
+    <%# 性別 %>
+       <div class = "text-area">
+      <div class = "code-size">
+        <a class = "code-title">パンツ</a>
+        <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+      </div>
+    </div>
+    <%# 性別 %>
+
+    <%# コーディネート詳細%>
       <% end %>
+  
     </main>
+    <footer>
+      <p>footer作る</p>
+    </footer>
   </body>
