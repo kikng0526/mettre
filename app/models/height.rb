@@ -1,6 +1,6 @@
 class Height < ActiveHash::Base
   self.data = [
-      {id: 0, name: '---' },
+      {id: 0, name: '選択してください' },
       {id: 1, name: '~149'}, 
       {id: 2, name: '150~154'}, 
       {id: 3, name: '155~159'},

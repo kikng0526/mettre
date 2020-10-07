@@ -30,7 +30,9 @@
       </header>
     </div>
     <h2 class = "title-main"><i class="fas fa-camera-retro"></i> FASHION</h2>
+
     <main>
+    <div class = "container">
     <%= form_with model: @fashion, local: true do |f| %>
     <%# 画像 %>
     <div class = "image-area">
@@ -112,16 +114,39 @@
     <%# 性別 %>
        <div class = "text-area">
       <div class = "code-size">
-        <a class = "code-title">パンツ</a>
+        <a class = "code-title">性別</a>
         <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
       </div>
     </div>
     <%# 性別 %>
 
+    <%# 年齢 %>
+      <div class = "text-area">
+      <div class = "code-size">
+        <a class = "code-title">年齢</a>
+        <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+      </div>
+    </div>
+    <%# 年齢 %>
+
+    <%# 身長 %>
+       <div class = "end-area">
+      <div class = "code-size">
+        <a class = "code-title">身長</a>
+        <%= f.collection_select(:height_id, Height.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+      </div>
+    </div>
+    </div>
+    <%# 身長 %>
     <%# コーディネート詳細%>
-      <% end %>
-  
+
+    <div class = "send">
+      <%= f.submit "登録" ,class:"button" %>
+      <%# <input type="submit" value"送信する" class="button"> %>
+    </div>
+    <% end %>
     </main>
+
     <footer>
       <p>footer作る</p>
     </footer>
