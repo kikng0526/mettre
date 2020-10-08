@@ -1,5 +1,6 @@
 class FashionsController < ApplicationController
   def index
+    @fashions = Fashion.includes(:user).order('created_at DESC')
   end
 
   def new

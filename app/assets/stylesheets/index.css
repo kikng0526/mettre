@@ -1,5 +1,8 @@
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -8,7 +11,7 @@ header {
   height: 70px;
   background-color: whitesmoke;
   align-items: center;
-  /* position: fixed; */
+  position: fixed;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -17,8 +20,20 @@ header {
 }
 
 /* 検索ボタン */
+
+.main {
+  min-height: 100vh;
+  background-image: url(logo2.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  z-index: 1;
+  opacity: .8;
+}
+
 .search_container{
  padding-left: 100px;
+ 
 }
 
 .input-text{
@@ -49,6 +64,13 @@ li+ li {
   border-left: 1px solid #333;
 }
 
+.nav .ser-nickname {
+  text-decoration: none;
+  font-size: small;
+  color: black;
+  display: flex;
+}
+
 .nav{
   text-decoration: none;
   font-size: small;
@@ -64,6 +86,8 @@ li+ li {
 /*タブ切り替え全体のスタイル*/
 .tab-container {
   padding-top: 30px;
+  margin-top: 100px;
+  opacity: .95;
 }
 
 .tabs {
@@ -72,7 +96,10 @@ li+ li {
   background-color: #fff;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   width: 70%;
-  margin: 0 auto;}
+  margin: 0 auto;
+  min-height: 50vh;
+}
+  
 
 /*タブのスタイル*/
 .tab_item {
@@ -125,5 +152,59 @@ input[name="tab_item"] {
   margin: 10px;
 }
 
+
+/* footer center*/
+
+footer {
+	display: inline-block;
+	width: 100%;
+	height: 70px;
+	background-color: whitesmoke;
+}
+footer .copyright {
+	float: left;
+	width: 60%;
+}
+footer .copyright p {
+	font-size: 0.7em;
+  line-height: 40px;
+	padding-left: 10%;
+	letter-spacing: 1px;
+	color: #666666;
+}
+footer .sns {
+	float: right;
+	width: 40%;
+}
+footer .sns a {
+	width: 25%;
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 70px;
+	float: left;
+	-webkit-transition: all, 0.3s;
+	        transition: all, 0.3s;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+}
+footer .sns a:hover {
+	-webkit-transition: all, 0.3s;
+	        transition: all, 0.3s;
+  background-color: #222222;
+  background: #222222;
+}
+footer .sns .youtube {
+	background-color: #e4405f;
+}
+footer .sns .fb {
+	background-color: #3b5999;
+}
+footer .sns .tw {
+	background-color: #55acee;
+}
+footer .sns .insta {
+	background: linear-gradient(#4C64D3,#CF2E92,#F26939,#FFDD83)
+}
 
 

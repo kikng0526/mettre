@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <title>METTRE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="app/assets/stylesheets/index.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   </head>
   <body>
@@ -13,7 +13,7 @@
       <form method="get" action="#" class="search_container">
         <input type="text" size="25" class = "input-text font-awesome" placeholder="&#xF002;　fashion検索">
       </form>
-        <h1 class = "title"><a href= "/"> <%= image_tag 'logo.png' %></a></h1>
+        <h1 class = "title"><a href= "/"></a></h1>
       <div class = "navbar">
         <ul class='nav-lists'>
           <% if user_signed_in? %>
@@ -30,7 +30,8 @@
     
 
     <%# タグ %>
-    <main>
+    
+    <div class = "main">
     <div class = "tab-container">
     <div class="tabs">
       <input id="all" type="radio" name="tab_item" checked>
@@ -39,8 +40,12 @@
       <label class="tab_item" for="programming">MEN</label>
         <input id="design" type="radio" name="tab_item">
       <label class="tab_item" for="design">WOMEN</label>
+        
         <div class="tab_content" id="all_content">
-          総合の内容がここに入ります
+          <% @fashions.each do |fashion| %>
+          <%= image_tag fashion.image, class: "item-image"%>
+          <%= fashion.text%>
+          <%end%>
         </div>
         <div class="tab_content" id="programming_content">
           プログラミングの内容がここに入ります
@@ -48,10 +53,25 @@
         <div class="tab_content" id="design_content">
           デザインの内容がここに入ります
         </div>
+        
     </div>
     </div>
-    </main>
+    </div>
+    
     <%# タグ %>
+
+    <footer>
+<div class="copyright">
+	<p>© 2020 - METTRE</p>
+</div>
+<div class="sns">
+	<%# <a href="#" class="contact">Contact</a> %>
+  <a href="#" class="youtube"><i class="fa fa-youtube fa-fw" aria-hidden="true"></i></a>
+	<a href="#" class="fb"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a>
+	<a href="#" class="tw"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
+	<a href="#" class="insta"><i class="fa fa-instagram fa-fw" aria-hidden="true"></i></a>
+</div>
+</footer>
 
   </body>
 </html>
