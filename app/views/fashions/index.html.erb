@@ -41,19 +41,24 @@
         <input id="design" type="radio" name="tab_item">
       <label class="tab_item" for="design">WOMEN</label>
         
+      <% @fashions.each do |fashion| %>
         <div class="tab_content" id="all_content">
-          <% @fashions.each do |fashion| %>
           <%= image_tag fashion.image, class: "item-image"%>
-          <%= fashion.text%>
-          <%end%>
         </div>
+
         <div class="tab_content" id="programming_content">
-          プログラミングの内容がここに入ります
+          <% if fashion.sex_id === 1%>
+          <%= image_tag fashion.image, class: "item-image"%>
+          <% end %>
         </div>
+
         <div class="tab_content" id="design_content">
-          デザインの内容がここに入ります
+          <% if fashion.sex_id === 2%>
+          <%= image_tag fashion.image, class: "item-image"%>
+          <% end %>
         </div>
-        
+
+      <%end%>
     </div>
     </div>
     </div>
