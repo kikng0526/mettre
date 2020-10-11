@@ -16,6 +16,11 @@ class FashionsController < ApplicationController
     end
   end
 
+  def show 
+    @fashion = Fashion.find(params[:id])
+    # @user = User.find(params[:id])
+  end
+
   private
 
   def fashion_params
