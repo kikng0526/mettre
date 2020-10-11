@@ -29,6 +29,8 @@ header {
   background-attachment: fixed;
   z-index: 1;
   opacity: .8;
+  padding-top: 50px;
+  padding-bottom: 200px;
 }
 
 .search_container{
@@ -116,7 +118,9 @@ li+ li {
   text-align: center;
   font-weight: bold;
   transition: all 0.2s ease;
+  margin-bottom: 40px;
 }
+
 .tab_item:hover {
   opacity: 0.75;
 }
@@ -129,10 +133,9 @@ input[name="tab_item"] {
 /*タブ切り替えの中身のスタイル*/
 .tab_content {
   display: none;
-  padding: 40px 40px 0;
-  clear: both;
-  overflow: hidden;
+  padding: 0 10px 30px 40px;
 }
+
 
 
 /*選択されているタブのコンテンツのみを表示*/
@@ -150,6 +153,15 @@ input[name="tab_item"] {
 
 .search_container {
   margin: 10px;
+}
+
+.item-image {
+  margin-top: 20px;
+  margin-right: 25px;
+  margin-bottom: 30px;
+  border: 1px solid black;
+  height: 380px;
+  width: 30%;
 }
 
 

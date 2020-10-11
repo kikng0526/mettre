@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <title>METTRE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="app/assets/stylesheets/index.css">
+    <link rel="stylesheet" href="app/assets/stylesheets/new.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   </head>
   <body>
@@ -13,7 +13,9 @@
       <form method="get" action="#" class="search_container">
         <input type="text" size="25" class = "input-text font-awesome" placeholder="&#xF002;　fashion検索">
       </form>
-        <h1 class = "title"><a href= "/"></a></h1>
+        <h1 class = "title"><a href= "/"> 
+        <%# <%= image_tag 'logo.png' %> 
+        </a></h1>
       <div class = "navbar">
         <ul class='nav-lists'>
           <% if user_signed_in? %>
@@ -27,60 +29,41 @@
       </div>
       </header>
     </div>
-    
+    <h2 class = "title-main"><i class="fas fa-camera-retro"></i> FASHION</h2>
 
-    <%# タグ %>
-    
-    <div class = "main">
-    <div class = "tab-container">
-    <div class="tabs">
-      <input id="all" type="radio" name="tab_item" checked>
-        <label class="tab_item" for="all">ALL</label>
-      <input id="programming" type="radio" name="tab_item">
-      <label class="tab_item" for="programming">MEN</label>
-        <input id="design" type="radio" name="tab_item">
-      <label class="tab_item" for="design">WOMEN</label>
-
-        <div class="tab_content" id="all_content">
-
-
-        <% @fashions.each do |fashion| %>
-        <%= link_to fashion_path(fashion.id),class: 'name', local: true do %>
-          <%= image_tag fashion.image, class: "item-image"%>
-          <%# <div class = "fashion-details"> %>
-            <%# <%= fashion.title %>
-          <%# </div> %>
-          <% end %>
-          <%end%>
+    <div class = "main-main">
+      <div class = "cont">
+        <%= image_tag @fashion.image, class: "items-image"%>
+        <div class = "user-details">
+          <p class = "user-name">ユーザー</p>
+          <h2><%= @fashion.user.username%></h2>
+          <h3><%= @fashion.sex.name%></h3>
+          <h3><%= @fashion.age.name%></h3>
+          <h3><%= @fashion.height.name%></h3>
         </div>
-
-        <div class="tab_content" id="programming_content">
-        <% @fashions.each do |fashion| %>
-          <% if fashion.sex_id === 1%>
-          <%= image_tag fashion.image, class: "item-image" %>
-          <% end %>
-        <% end %>
+        <div class = "details">
+          <p class = "title">コーディネート名</p>
+          <h2><%= @fashion.title%></h2>
+          <p class = "text">コーディネート紹介<p>
+          <h2><%= @fashion.text%></h2>
+          <p class = "time"><i class="far fa-clock"></i> <%= @fashion.created_at%></p>
         </div>
-
-        <div class="tab_content" id="design_content">
-        <% @fashions.each do |fashion| %>
-          <% if fashion.sex_id === 2 %>
-          <%= image_tag fashion.image, class: "item-image" %>
-          <% end %>
-        <% end%>
-        </div>
-
+          <p class = "accessories">アクセサリー</p>
+          <h2><%= @fashion.accessories%></h2>
+          <p class = "accessories">トップス</p>
+          <h2><%= @fashion.tops%></h2>
+          <p class = "accessories">アウター</p>
+          <h2><%= @fashion.outer%></h2>
+          <p class = "accessories">パンツ</p>
+          <h2><%= @fashion.pants%></h2>
+      </div>
     </div>
-    </div>
-    </div>
-    
-    <%# タグ %>
 
-    <footer>
-<div class="copyright">
+<footer>
+ <div class="copyright">
 	<p>© 2020 - METTRE</p>
-</div>
-<div class="sns">
+ </div>
+  <div class="sns">
 	<%# <a href="#" class="contact">Contact</a> %>
   <a href="#" class="youtube"><i class="fa fa-youtube fa-fw" aria-hidden="true"></i></a>
 	<a href="#" class="fb"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a>
@@ -90,4 +73,3 @@
 </footer>
 
   </body>
-</html>

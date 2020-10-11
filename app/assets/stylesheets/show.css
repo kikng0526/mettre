@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  background-color: whitesmoke;
+  align-items: center;
+  position: fixed;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.title {
+ margin: 0 auto;
+}
+
+.main-main {
+    background-image: url(back.jpg);
+    background-size: cover;
+    background-position: center center;
+    opacity: .8;
+    background-attachment: fixed;
+    z-index: 1;
+    min-height: 100vh;
+}
+
+.cont {
+  flex: 1;
+  width: 70%;
+  margin: 0 auto;
+  min-height: 100vh;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  background-color:whitesmoke;
+  z-index: 2;
+  opacity: .97;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.cont .items-image {
+  width: 50%;
+  height: 600px;
+  padding-left: 20px;
+  padding-top: 50px;
+  border: none;
+}
+
+.details {
+  float: right;
+  padding: 10px;
+  margin-top: 50px;
+  margin-right: 20px;
+  width: 40%;
+  min-height: 30%;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.time {
+  text-align: center;
+}
+
+p {
+  text-align: left;
+  font-size: 12px;
+  color: gray;
+}
+
+
+.details h2{
+  text-align: center;
+  border-bottom: 1px solid gainsboro;
+  padding-bottom: 20px;
+}
+
+
+
+/* footer center*/
+
+footer {
+	display: inline-block;
+	width: 100%;
+	height: 70px;
+	background-color: whitesmoke;
+}
+footer .copyright {
+	float: left;
+	width: 60%;
+}
+footer .copyright p {
+	font-size: 0.7em;
+  line-height: 40px;
+	padding-left: 10%;
+	letter-spacing: 1px;
+	color: #666666;
+}
+footer .sns {
+	float: right;
+	width: 40%;
+}
+footer .sns a {
+	width: 25%;
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 70px;
+	float: left;
+	-webkit-transition: all, 0.3s;
+	        transition: all, 0.3s;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+}
+footer .sns a:hover {
+	-webkit-transition: all, 0.3s;
+	        transition: all, 0.3s;
+  background-color: #222222;
+  background: #222222;
+}
+footer .sns .youtube {
+	background-color: #e4405f;
+}
+footer .sns .fb {
+	background-color: #3b5999;
+}
+footer .sns .tw {
+	background-color: #55acee;
+}
+footer .sns .insta {
+	background: linear-gradient(#4C64D3,#CF2E92,#F26939,#FFDD83)
+}
+
+
