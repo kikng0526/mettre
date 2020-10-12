@@ -1,5 +1,6 @@
 class Fashion < ApplicationRecord
   belongs_to :user
+  has_many :favorites, dependent: :destroy
   has_one_attached :image
 
 extend ActiveHash::Associations::ActiveRecordExtensions

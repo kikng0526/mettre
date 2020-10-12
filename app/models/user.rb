@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :fashions
+  has_many :favorites, dependent: :destroy
+
+  def already_favorited?(fashion)
+    self.favorites.exists?(fashion_id: fashion.id)
+  end
 end

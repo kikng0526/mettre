@@ -40,6 +40,12 @@
       <div class = "cont">
         <div class="content">
         <%= image_tag @fashion.image, class: "items-image"%>
+        <% if current_user.already_favorited?(@fashion)%>
+          <%= link_to 'いいねを外す',fashion_favorites_path(@fashion), method: :delete %>
+        <% else %>
+          <%= link_to 'いいね',fashion_favorites_path(@fashion), method: :post %>
+        <% end %>
+        <%= @fashion.favorites.count %>
         
        <div class = "user-infomation">
 
