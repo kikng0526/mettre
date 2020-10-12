@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -20,6 +19,26 @@ header {
  margin: 0 auto;
 }
 
+.btn-square-shadow {
+  display: inline-block;
+  text-align: center;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: whitesmoke;/*ボタン色*/
+  color: black;
+  border: solid 1px gray;
+  border-radius: 3px;
+  width: 5%;
+  margin-left: auto;
+  margin-right: 100px;
+  margin-bottom: 30px;
+}
+
+.btn-square-shadow:hover {
+  /*ボタンを押したとき*/
+  background-color: white;
+}
+
 .main-main {
     background-image: url(back.jpg);
     background-size: cover;
@@ -27,39 +46,78 @@ header {
     opacity: .8;
     background-attachment: fixed;
     z-index: 1;
-    min-height: 100vh;
+    
 }
 
 .cont {
   flex: 1;
   width: 70%;
   margin: 0 auto;
-  min-height: 100vh;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   background-color:whitesmoke;
   z-index: 2;
   opacity: .97;
   margin-top: 150px;
   margin-bottom: 150px;
+  
 }
 
-.cont .items-image {
-  width: 50%;
+.items-image {
+  min-width: 50%;
   height: 600px;
   padding-left: 20px;
   padding-top: 50px;
   border: none;
 }
 
-.details {
-  float: right;
-  padding: 10px;
+.content {
+  display: flex;
+}
+
+.user-infomation {
+  width: 100%;
+}
+
+.user-infomation .title-user {
+  margin-left: 20px;
   margin-top: 50px;
-  margin-right: 20px;
-  width: 40%;
-  min-height: 30%;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.user-infomation .title-main{
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 15px;
+ }
+
+.user-details {
+  text-align: center;
+  padding: 10px;
+  margin: 0 20px 30px 20px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   background-color: white;
+  width: 85%;
+  min-height: 15%;
+}
+
+.details {
+  padding: 10px 10px 0 10px;
+  margin: 10px 20px 0 20px;
+  height: 25%;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  width: 85%;
+}
+
+.fashion-details {
+  padding: 10px 10px 0 10px;
+  margin: 10px 20px 50px 20px;
+  min-height: 20%;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  width: 85%;
 }
 
 .time {
@@ -72,6 +130,27 @@ p {
   color: gray;
 }
 
+.user-model  {
+  display: flex;
+}
+
+.user-info {
+padding-right: 15%;
+}
+
+.user-info2 {
+  padding-left: 15px;
+  margin-right: 15px;
+  border-left: 1px solid gray;
+  float: left;
+}
+
+.user-details h2 {
+  text-align: center;
+  border-bottom: 1px solid gainsboro;
+  padding-bottom: 20px;
+}
+
 
 .details h2{
   text-align: center;
@@ -79,60 +158,9 @@ p {
   padding-bottom: 20px;
 }
 
-
-
-/* footer center*/
-
-footer {
-	display: inline-block;
-	width: 100%;
-	height: 70px;
-	background-color: whitesmoke;
+.fashion-details h2{
+  text-align: center;
+  border-bottom: 1px solid gainsboro;
+  padding-bottom: 20px;
 }
-footer .copyright {
-	float: left;
-	width: 60%;
-}
-footer .copyright p {
-	font-size: 0.7em;
-  line-height: 40px;
-	padding-left: 10%;
-	letter-spacing: 1px;
-	color: #666666;
-}
-footer .sns {
-	float: right;
-	width: 40%;
-}
-footer .sns a {
-	width: 25%;
-	font-size: 1.2em;
-	font-weight: bold;
-	line-height: 70px;
-	float: left;
-	-webkit-transition: all, 0.3s;
-	        transition: all, 0.3s;
-	text-align: center;
-	text-decoration: none;
-	color: white;
-}
-footer .sns a:hover {
-	-webkit-transition: all, 0.3s;
-	        transition: all, 0.3s;
-  background-color: #222222;
-  background: #222222;
-}
-footer .sns .youtube {
-	background-color: #e4405f;
-}
-footer .sns .fb {
-	background-color: #3b5999;
-}
-footer .sns .tw {
-	background-color: #55acee;
-}
-footer .sns .insta {
-	background: linear-gradient(#4C64D3,#CF2E92,#F26939,#FFDD83)
-}
-
 

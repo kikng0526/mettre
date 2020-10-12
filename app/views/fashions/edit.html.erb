@@ -1,0 +1,164 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>METTRE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="app/assets/stylesheets/new.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <%# ヘッダー %>
+    <div class = "heading">
+      <header>
+      <form method="get" action="#" class="search_container">
+        <input type="text" size="25" class = "input-text font-awesome" placeholder="&#xF002;　fashion検索">
+      </form>
+        <h1 class = "title"><a href= "/"> 
+        <%# <%= image_tag 'logo.png' %> 
+        </a></h1>
+      <div class = "navbar">
+        <ul class='nav-lists'>
+          <% if user_signed_in? %>
+             <li><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "nav ser-nickname" %></li> 
+             <li><%= link_to 'ログアウト', "/users/sign_out", method: :delete, class: "nav ogout" %></li>
+           <% else %>
+            <li><%= link_to 'ログイン', "/users/sign_in", class: "nav login" %></li>
+            <li><%= link_to '新規会員登録', "/users/sign_up", class: "nav sign-up" %></li>
+          <% end %> 
+        </ul>
+      </div>
+      </header>
+    </div>
+    <h2 class = "title-main"><i class="fas fa-camera-retro"></i> FASHION</h2>
+
+    <% if current_user === @fashion.user %>
+    <%= link_to '削除', fashion_path(@fashion),method: :delete, class: "btn-square-shadow"%>
+    <% end %>
+
+    <main>
+    <div class = "container">
+    <%= form_with model: @fashion, local: true do |f| %>
+    <%# 画像 %>
+    <div class = "image-area">
+      <div class = "image-text">
+        <a>コーディネート画像</a>
+        <div class = "text-size">
+          <li>推奨サイズ：300px x 400px</li>
+          <li>容量10MB未満</li>
+        </div>
+      </div>
+      <div class="click-upload">
+       <%= image_tag @fashion.image, id:"item-image"%>
+      </div>
+    </div>
+    <%# 画像 %>
+
+    <%# コーディネート詳細%>
+
+    <%# コーデ名 %>
+    <div class = "text-area">
+      <div class = "code-text">
+        <a>コーディネート詳細</a>
+      </div>
+        <div class = "code-size">
+        <a class = "code-title">コーディネート名(40字以内)</a>
+        <%= f.text_field :title, class:"items-text", id:"item-name", maxlength:"40" %>
+        </div>
+    </div>
+    <%# コーデ名 %>
+
+    <%# コーディネート説明文 %>
+    <div class = "text-area">
+      <div class = "code-size">
+        <a class = "code-title">コーディネート紹介文</a>
+        <%= f.text_area :text, class:"items-area", id:"item-name"%>
+      </div>
+    </div>
+    <%# コーディネート説明文 %>
+
+    <%# アクセサリー %>
+      <div class = "text-area">
+      <div class = "code-size">
+        <a class = "code-title">アクセサリー類</a>
+        <%= f.text_field :accessories, class:"items-text", id:"item-name"%>
+      </div>
+    </div>
+    <%# アクセサリー %>
+
+    <%# トップス %>
+      <div class = "text-area">
+      <div class = "code-size">
+        <a class = "code-title">トップス</a>
+        <%= f.text_field :tops, class:"items-text", id:"item-name"%>
+      </div>
+    </div>
+    <%# トップス %>
+
+    <%# アウター %>
+      <div class = "text-area">
+      <div class = "code-size">
+        <a class = "code-title">アウター</a>
+        <%= f.text_field :outer, class:"items-text", id:"item-name"%>
+      </div>
+    </div>
+    <%# アウター %>
+
+    <%# パンツ %>
+      <div class = "text-area">
+      <div class = "code-size">
+        <a class = "code-title">パンツ</a>
+        <%= f.text_field :pants, class:"items-text", id:"item-name"%>
+      </div>
+    </div>
+    <%# パンツ %>
+
+    <%# 性別 %>
+       <div class = "text-area">
+      <div class = "code-size">
+        <a class = "code-title">性別</a>
+        <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+      </div>
+    </div>
+    <%# 性別 %>
+
+    <%# 年齢 %>
+      <div class = "text-area">
+      <div class = "code-size">
+        <a class = "code-title">年齢</a>
+        <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+      </div>
+    </div>
+    <%# 年齢 %>
+
+    <%# 身長 %>
+       <div class = "end-area">
+      <div class = "code-size">
+        <a class = "code-title">身長</a>
+        <%= f.collection_select(:height_id, Height.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+      </div>
+    </div>
+    </div>
+    <%# 身長 %>
+    <%# コーディネート詳細%>
+
+    <div class = "send">
+      <%= f.submit "変更",class:"button" %>
+      <%# <input type="submit" value"送信する" class="button"> %>
+    </div>
+    <% end %>
+    </main>
+
+<footer>
+ <div class="copyright">
+	<p>© 2020 - METTRE</p>
+ </div>
+  <div class="sns">
+	<%# <a href="#" class="contact">Contact</a> %>
+  <a href="#" class="youtube"><i class="fa fa-youtube fa-fw" aria-hidden="true"></i></a>
+	<a href="#" class="fb"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a>
+	<a href="https://twitter.com/kaito_yamaki" class="tw"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
+	<a href="https://www.instagram.com/kikng0526" class="insta"><i class="fa fa-instagram fa-fw" aria-hidden="true"></i></a>
+</div>
+</footer>
+
+  </body>

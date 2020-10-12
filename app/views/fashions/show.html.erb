@@ -30,17 +30,34 @@
       </header>
     </div>
     <h2 class = "title-main"><i class="fas fa-camera-retro"></i> FASHION</h2>
+    <%# <a href="/fashions/#{fashion/edit" class="btn-square-shadow">編集</a> %>
+
+    <% if current_user === @fashion.user %>
+    <%= link_to '編集', edit_fashion_path(@fashion),method: :get, class: "btn-square-shadow"%>
+    <% end %>
 
     <div class = "main-main">
       <div class = "cont">
+        <div class="content">
         <%= image_tag @fashion.image, class: "items-image"%>
+        
+       <div class = "user-infomation">
+
+       <h2 class = "title-user"><i class="fas fa-user"></i> USER</h2>
+
         <div class = "user-details">
-          <p class = "user-name">ユーザー</p>
+          <p class = "user-name">ユーザー名</p>
           <h2><%= @fashion.user.username%></h2>
-          <h3><%= @fashion.sex.name%></h3>
-          <h3><%= @fashion.age.name%></h3>
-          <h3><%= @fashion.height.name%></h3>
+          <div class = "user-model">
+          <p class = "user-info">モデル情報:</p>
+          <p class = "user-info2"><%= @fashion.sex.name%></p>
+          <p class = "user-info2"><%= @fashion.age.name%></p>
+          <p class = "user-info2"><%= @fashion.height.name%></p>
+          </div>
         </div>
+
+        <h2 class = "title-main"><i class="fas fa-camera-retro"></i> FASHION</h2>
+
         <div class = "details">
           <p class = "title">コーディネート名</p>
           <h2><%= @fashion.title%></h2>
@@ -48,14 +65,29 @@
           <h2><%= @fashion.text%></h2>
           <p class = "time"><i class="far fa-clock"></i> <%= @fashion.created_at%></p>
         </div>
-          <p class = "accessories">アクセサリー</p>
+
+         <h2 class = "title-main"><i class="fas fa-tshirt"></i> ITEM</h2>
+
+        <div class="fashion-details">
+          <% if @fashion.accessories.present? %>
+          <p class = "title">アクセサリー</p>
           <h2><%= @fashion.accessories%></h2>
-          <p class = "accessories">トップス</p>
+          <% end %>
+          <% if @fashion.tops.present? %>
+          <p class = "text">トップス<p>
           <h2><%= @fashion.tops%></h2>
-          <p class = "accessories">アウター</p>
+          <% end %>
+          <% if @fashion.outer.present? %>
+          <p class = "text">アウター<p>
           <h2><%= @fashion.outer%></h2>
-          <p class = "accessories">パンツ</p>
+          <% end %>
+          <% if @fashion.pants.present? %>
+          <p class = "text">パンツ<p>
           <h2><%= @fashion.pants%></h2>
+          <% end %>
+        </div>
+
+        </div>
       </div>
     </div>
 
@@ -72,4 +104,4 @@
 </div>
 </footer>
 
-  </body>
+</body>

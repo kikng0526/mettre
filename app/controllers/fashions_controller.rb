@@ -18,8 +18,31 @@ class FashionsController < ApplicationController
 
   def show 
     @fashion = Fashion.find(params[:id])
-    # @user = User.find(params[:id])
   end
+
+  def destroy
+    @fashion = Fashion.find(params[:id])
+    if @fashion.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
+
+  def edit
+    @fashion = Fashion.find(params[:id])
+  end
+
+  def update
+    @fashion = Fashion.find(params[:id])
+    if @fashion.update(fashion_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+
 
   private
 

@@ -171,7 +171,7 @@ footer {
 	display: inline-block;
 	width: 100%;
 	height: 70px;
-	background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 footer .copyright {
 	float: left;
