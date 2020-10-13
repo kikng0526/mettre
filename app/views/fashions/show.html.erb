@@ -39,13 +39,22 @@
     <div class = "main-main">
       <div class = "cont">
         <div class="content">
+        <div class = "fashion-image">
         <%= image_tag @fashion.image, class: "items-image"%>
+        <div class = "favorite">
         <% if current_user.already_favorited?(@fashion)%>
-          <%= link_to 'いいねを外す',fashion_favorites_path(@fashion), method: :delete %>
+          <%= link_to fashion_favorites_path(@fashion), method: :delete do %>
+            <i class = "fas fa-heart"></i>
+          <% end %>
         <% else %>
-          <%= link_to 'いいね',fashion_favorites_path(@fashion), method: :post %>
+          <%= link_to fashion_favorites_path(@fashion), method: :post do %>
+            <i class = "far fa-heart"></i>
+          <% end %>
         <% end %>
         <%= @fashion.favorites.count %>
+        </div>
+
+        </div>
         
        <div class = "user-infomation">
 

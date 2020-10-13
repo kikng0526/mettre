@@ -63,7 +63,7 @@ header {
 }
 
 .items-image {
-  min-width: 50%;
+  width: 90%;
   height: 600px;
   padding-left: 20px;
   padding-top: 50px;
@@ -72,6 +72,15 @@ header {
 
 .content {
   display: flex;
+}
+
+.fashion-image {
+  height: 100%;
+  width: 100%;
+}
+
+.favorite {
+  float: right;
 }
 
 .user-infomation {
@@ -103,9 +112,9 @@ header {
 }
 
 .details {
-  padding: 10px 10px 0 10px;
+  padding: 10px 10px 20px 10px;
   margin: 10px 20px 0 20px;
-  height: 25%;
+  min-height: 20%;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   background-color: white;
   width: 85%;
@@ -114,7 +123,7 @@ header {
 .fashion-details {
   padding: 10px 10px 0 10px;
   margin: 10px 20px 50px 20px;
-  min-height: 20%;
+  min-height: 0px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   background-color: white;
   width: 85%;
