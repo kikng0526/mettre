@@ -63,7 +63,7 @@ header {
 }
 
 .items-image {
-  width: 90%;
+  min-width: 90%;
   height: 600px;
   padding-left: 20px;
   padding-top: 50px;
@@ -104,29 +104,29 @@ header {
 .user-details {
   text-align: center;
   padding: 10px;
-  margin: 0 20px 30px 20px;
+  margin: 0 20px 30px 50px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   background-color: white;
-  width: 85%;
+  width: 70%;
   min-height: 15%;
 }
 
 .details {
   padding: 10px 10px 20px 10px;
-  margin: 10px 20px 0 20px;
+  margin: 10px 20px 0 50px;
   min-height: 20%;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   background-color: white;
-  width: 85%;
+  width: 70%;
 }
 
 .fashion-details {
   padding: 10px 10px 0 10px;
-  margin: 10px 20px 50px 20px;
+  margin: 10px 20px 50px 50px;
   min-height: 0px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   background-color: white;
-  width: 85%;
+  width: 70%;
 }
 
 .time {
@@ -167,7 +167,13 @@ padding-right: 15%;
   padding-bottom: 20px;
 }
 
-.fashion-details h2{
+.details h3 {
+  text-align: center;
+  border-bottom: 1px solid gainsboro;
+  padding-bottom: 20px;
+}
+
+.fashion-details h3{
   text-align: center;
   border-bottom: 1px solid gainsboro;
   padding-bottom: 20px;

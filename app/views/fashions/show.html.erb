@@ -77,7 +77,7 @@
           <p class = "title">コーディネート名</p>
           <h2><%= @fashion.title%></h2>
           <p class = "text">コーディネート紹介<p>
-          <h2><%= @fashion.text%></h2>
+          <h3><%= @fashion.text%></h3>
           <p class = "time"><i class="far fa-clock"></i> <%= @fashion.created_at%></p>
         </div>
 
@@ -86,19 +86,19 @@
         <div class="fashion-details">
           <% if @fashion.accessories.present? %>
           <p class = "title">アクセサリー</p>
-          <h2><%= @fashion.accessories%></h2>
+          <h3><%= @fashion.accessories%></h3>
           <% end %>
           <% if @fashion.tops.present? %>
           <p class = "text">トップス<p>
-          <h2><%= @fashion.tops%></h2>
+          <h3><%= @fashion.tops%></h3>
           <% end %>
           <% if @fashion.outer.present? %>
           <p class = "text">アウター<p>
-          <h2><%= @fashion.outer%></h2>
+          <h3><%= @fashion.outer%></h3>
           <% end %>
           <% if @fashion.pants.present? %>
           <p class = "text">パンツ<p>
-          <h2><%= @fashion.pants%></h2>
+          <h3><%= @fashion.pants%></h3>
           <% end %>
         </div>
 
