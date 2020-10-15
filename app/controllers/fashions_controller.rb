@@ -18,6 +18,8 @@ class FashionsController < ApplicationController
 
   def show 
     @fashion = Fashion.find(params[:id])
+    @comment  = @fashion.comments.new
+    @comments = @fashion.comments.includes(:user).all
   end
 
   def destroy

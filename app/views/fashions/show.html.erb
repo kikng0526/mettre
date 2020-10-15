@@ -42,6 +42,7 @@
         <div class = "fashion-image">
         <%= image_tag @fashion.image, class: "items-image"%>
         <div class = "favorite">
+        <% if current_user%>
         <% if current_user.already_favorited?(@fashion)%>
           <%= link_to fashion_favorites_path(@fashion), method: :delete do %>
             <i class = "fas fa-heart"></i>
@@ -52,6 +53,23 @@
           <% end %>
         <% end %>
         <%= @fashion.favorites.count %>
+        <% end %>
+        <%=  form_for [@fashion, @comment] do |f| %>
+        <%= f.text_area :text, placeholder: "コメントする" ,rows: "2"%>
+        <%= f.submit "SEND" %>
+
+        <div id = "messages">
+        <% if @comments %>
+          <% @comments.reverse_each do |comment| %>
+            <p class = "com">
+            <%= comment.user.nickname %> <u>さん</u>
+            <a>:</a><%= comment.text %>
+            </p>
+          <% end %>
+       <% end %>
+      </div>
+
+      <% end %>
         </div>
 
         </div>
