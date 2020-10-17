@@ -79,8 +79,49 @@ header {
   width: 100%;
 }
 
+.favcomment {
+  width: 90%;
+  background-color: white;
+  height: 70px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  margin-left: 20px;
+}
+
 .favorite {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  padding: 10px 10px 10px 15px;
+  margin-top: 10px;
+  margin-right: 10px;
   float: right;
+  width: 50px;
+}
+
+.favorite .fa-heart{
+  color: red;
+  font-size: 20px;
+}
+
+.favorite a {
+  text-decoration: none;
+}
+
+.favcomment .com {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  padding: 10px 10px 10px 15px;
+  margin-top: 10px;
+  margin-right: 10px;
+  float: right;
+  width: 50px;
+}
+
+.fa-comment-alt {
+  font-size: 20px;
+  text-align: center;
+}
+
+.comment form {
+  margin-top: 50px;
+  margin-left: 20px;
 }
 
 .user-infomation {
@@ -144,7 +185,7 @@ p {
 }
 
 .user-info {
-padding-right: 15%;
+  padding-right: 15%;
 }
 
 .user-info2 {
