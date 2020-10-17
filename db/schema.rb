@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_10_14_033946) do
     t.bigint "user_id"
     t.bigint "fashion_id"
     t.text "text", null: false
+    t.string "user_nickname"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["fashion_id"], name: "index_comments_on_fashion_id"
