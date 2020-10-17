@@ -6,6 +6,7 @@ class User < ApplicationRecord
   
   has_many :fashions
   has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def already_favorited?(fashion)
     self.favorites.exists?(fashion_id: fashion.id)

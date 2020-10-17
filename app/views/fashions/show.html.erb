@@ -41,18 +41,50 @@
         <div class="content">
         <div class = "fashion-image">
         <%= image_tag @fashion.image, class: "items-image"%>
+
+      <div class="favcomment">
         <div class = "favorite">
-        <% if current_user.already_favorited?(@fashion)%>
-          <%= link_to fashion_favorites_path(@fashion), method: :delete do %>
-            <i class = "fas fa-heart"></i>
-          <% end %>
-        <% else %>
-          <%= link_to fashion_favorites_path(@fashion), method: :post do %>
-            <i class = "far fa-heart"></i>
-          <% end %>
-        <% end %>
-        <%= @fashion.favorites.count %>
+          <% if current_user%>
+            <% if current_user.already_favorited?(@fashion)%>
+              <%= link_to fashion_favorites_path(@fashion), method: :delete do %>
+              <i class = "fas fa-heart"></i>
+              <% end %>
+            <% else %>
+              <%= link_to fashion_favorites_path(@fashion), method: :post do %>
+                <i class = "far fa-heart"></i>
+              <% end %>
+            <% end %>
+            <%= @fashion.favorites.count %>
         </div>
+        <div class = "com">
+          <i class="far fa-comment-alt"></i>
+          <%= @fashion.comments.count %>
+        </div>
+          <% end %>
+      </div>
+
+      <div class = "comment-area">
+
+      
+      <h3><%= @fashion.user.username %>さんへのコメント</h3>
+      <div id = "messages">
+        <% if @comments %>
+          <% @comments.reverse_each do |comment| %>
+            <p class = "com">
+            <%= comment.user.nickname%>さん
+            <%= comment.text %>
+            </p>
+          <% end %>
+       <% end %>
+       </div>
+      
+      <div class="comment">
+        <%= form_with(model: [@fashion, @comment], remote: true) do |f| %>
+        <%= f.text_area :text, placeholder: "コメントを書く" ,rows: "2"%>
+        <%= f.submit "送信" %>
+        <% end %>
+      </div>
+      </div>
 
         </div>
         

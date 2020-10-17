@@ -25,8 +25,8 @@ header {
   padding: 0.5em 1em;
   text-decoration: none;
   background: whitesmoke;/*ボタン色*/
-  color: black;
-  border: solid 1px gray;
+  color: gray;
+  border: 1px solid gray;
   border-radius: 3px;
   width: 5%;
   margin-left: auto;
@@ -65,7 +65,7 @@ header {
 .items-image {
   min-width: 90%;
   height: 600px;
-  padding-left: 20px;
+  padding-left: 50px;
   padding-top: 50px;
   border: none;
 }
@@ -79,9 +79,101 @@ header {
   width: 100%;
 }
 
-.favorite {
-  float: right;
+.favcomment {
+  width: 90%;
+  background-color: white;
+  height: 70px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  margin-left: 50px;
 }
+
+.favorite {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  padding: 10px 10px 10px 15px;
+  margin-top: 10px;
+  margin-right: 10px;
+  float: right;
+  width: 50px;
+}
+
+.favorite .fa-heart{
+  color: red;
+  font-size: 20px;
+}
+
+.favorite a {
+  text-decoration: none;
+}
+
+.favcomment .com {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  padding: 10px 10px 10px 15px;
+  margin-top: 10px;
+  margin-right: 10px;
+  float: right;
+  width: 50px;
+}
+
+#messages p {
+  margin-left: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid gray;
+
+}
+
+.fa-comment-alt {
+  font-size: 20px;
+  text-align: center;
+}
+
+.comment-area {
+  width: 90%;
+  background-color: white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
+.comment-area h3 {
+  padding: 30px 0 20px 20px;
+}
+
+.comment {
+  padding: 10px 0 10px 10px;
+  margin-top: 50px;
+}
+
+.comment form {
+  margin-top: 0;
+  display: flex;
+}
+
+.comment textarea {
+  height: 40px;
+  width: 350px;
+  max-width: 350px;
+  min-width: 350px;
+  background-color: whitesmoke;
+  border: solid 1px #ddd;
+  border-radius: 3px;
+}
+
+.comment input {
+  border: solid 1px #ddd;
+  margin-left: 10px;
+  
+}
+
+.comment input[type="submit" i] {
+  width: 70px;
+  height: 46px;
+  border-radius: 3px;
+}
+
+.comment input[type="submit" i]:hover {
+  background-color: white;
+}
+
 
 .user-infomation {
   width: 100%;
@@ -144,7 +236,7 @@ p {
 }
 
 .user-info {
-padding-right: 15%;
+  padding-right: 15%;
 }
 
 .user-info2 {

@@ -5,6 +5,7 @@ class FashionsController < ApplicationController
 
   def new
     @fashion = Fashion.new
+    @coments = Comment.all
   end
 
   def create
@@ -18,6 +19,8 @@ class FashionsController < ApplicationController
 
   def show 
     @fashion = Fashion.find(params[:id])
+    @comment  = Comment.new
+    @comments = @fashion.comments.includes(:user)
   end
 
   def destroy
