@@ -32,6 +32,24 @@
     <%# タグ %>
     
     <div class = "main">
+
+    <%# 横 %>
+
+    <div id="hamburg">
+    <div id="content">
+     <ul class="list">
+        <li><a href="#"><i class="fas fa-home"></i> About</a>
+        </li>
+        <li><a href="#">Study</a>
+        </li>
+        <li><a href="#">Column</a>
+        </li>
+      </ul>
+     </div>
+  </div>
+     
+    <%# 横 %>
+
     <div class = "tab-container">
     <div class="tabs">
       <input id="all" type="radio" name="tab_item" checked>
@@ -45,27 +63,52 @@
 
 
         <% @fashions.each do |fashion| %>
+        <div class = "fashion-content">
         <%= link_to fashion_path(fashion.id),class: 'name', local: true do %>
           <%= image_tag fashion.image, class: "item-image"%>
-          <%# <div class = "fashion-details"> %>
-            <%# <%= fashion.title %>
-          <%# </div> %>
           <% end %>
+          <div class = "fashion-text">
+            @<%= fashion.user.nickname %>
+            <div class ="fashion-title"><a><%= fashion.title %></a></div>
+          </div>
+        </div>
           <%end%>
         </div>
 
         <div class="tab_content" id="programming_content">
+
         <% @fashions.each do |fashion| %>
           <% if fashion.sex_id === 1%>
+        <div class = "fashion-content1">
+        <%= link_to fashion_path(fashion.id),class: 'name', local: true do %>
           <%= image_tag fashion.image, class: "item-image" %>
+          <% end %>
+          <div class = "fashion-text">
+            @<%= fashion.user.nickname %>
+            <div class = "fashion-title">
+              <a><%= fashion.title %></a>
+            </div>
+          </div>
+          </div>
           <% end %>
         <% end %>
         </div>
 
         <div class="tab_content" id="design_content">
+
         <% @fashions.each do |fashion| %>
           <% if fashion.sex_id === 2 %>
+         <div class = "fashion-content2">
+         <%= link_to fashion_path(fashion.id),class: 'name', local: true do %>
           <%= image_tag fashion.image, class: "item-image" %>
+          <% end %>
+          <div class = "fashion-text">
+            @<%= fashion.user.nickname %>
+          <div class = "fashion-title">
+              <a><%= fashion.title %></a>
+            </div>
+          </div>
+          </div>
           <% end %>
         <% end%>
         </div>

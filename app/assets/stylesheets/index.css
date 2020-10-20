@@ -31,6 +31,7 @@ header {
   opacity: .8;
   padding-top: 50px;
   padding-bottom: 200px;
+  display: flex;
 }
 
 .search_container{
@@ -59,7 +60,7 @@ ul {
 li {
   float: left;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 30px;
 }
 
 li+ li {
@@ -80,15 +81,38 @@ li+ li {
   display: flex;
 }
 
+.nav-lists {
+  margin-right: 100px;
+}
+
 
 /* 検索ボタン */
 
+/* タグ */
+/*inputタグのチェックボックス非表示*/
+ 
+
+/*メニューのデザイン*/
+ 
+#content{
+  background-color: #fff;
+	opacity: .95;
+	width: 300px;
+	min-height: 100%;
+  margin-top: 300px;
+  z-index: 3;
+}
+ 
+/*チェックが入ったら見せる*/
+ 
+#input:checked ~ #content{
+	transform: translatex(0px);/*通常値に戻す*/
+}
 /* タグ */
 
 /*タブ切り替え全体のスタイル*/
 .tab-container {
   padding-top: 30px;
-  margin-top: 100px;
   opacity: .95;
 }
 
@@ -97,8 +121,7 @@ li+ li {
   padding-bottom: 40px;
   background-color: #fff;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  width: 70%;
-  margin: 0 auto;
+  width: 90%;
   min-height: 50vh;
 }
   
@@ -155,13 +178,80 @@ input[name="tab_item"] {
   margin: 10px;
 }
 
-.item-image {
-  margin-top: 20px;
-  margin-right: 25px;
-  margin-bottom: 30px;
-  height: 380px;
+.fashion-content {
   width: 30%;
+  display: inline-block;
+  margin-right: 25px;
+  margin-top: 20px;
+  transition-duration: .1s;
 }
+
+.fashion-content:hover,.fashion-content1:hover,.fashion-content2:hover {
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+  transform: translateY(-10px);
+  transition-duration: 0.5s;
+  background-color: black;
+}
+
+.fashion-content1 {
+  width: 30%;
+  display: inline-block;
+  margin-right: 25px;
+  margin-top: 20px;
+  transition-duration: 0.5s;
+}
+
+.fashion-content2 {
+  width: 30%;
+  display: inline-block;
+  margin-right: 25px;
+  margin-top: 20px;
+  transition-duration: 0.5s;
+}
+
+.item-image {
+  width: 100%;
+  height: 380px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+
+.fashion-text {
+  border: 1px solid gray;
+  padding: 10px 0;
+  text-align: left;
+  margin: none;
+  background-color: whitesmoke;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  padding-left: 20px;
+}
+
+.fashion-title {
+  -webkit-transform: skewX(150deg);
+  -moz-transform: skewX(150deg);
+  transform: skewX(150deg);
+  border-left: 1px solid #000;
+  margin-left: 35px;
+  padding-left: 55px;
+}
+
+.fashion-title a {
+  display:block;
+  transform: skewX(-150deg);
+  padding:0 10px;
+}
+
+.fashion-text a:-webkit-any-link {
+  text-decoration: none;
+  color: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+}
+
+
 
 
 /* footer center*/
@@ -216,6 +306,134 @@ footer .sns .tw {
 }
 footer .sns .insta {
 	background: linear-gradient(#4C64D3,#CF2E92,#F26939,#FFDD83)
+}
+
+
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6,  blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, 
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+ margin:0;
+ padding:0;
+ border:0;
+ outline:0;
+ vertical-align:baseline;
+ background:transparent;
+}
+
+body {
+ /* プロジェクトによって変動 */
+ min-width: 1000px;
+ color: #000;
+ line-height: 1.6;
+ font-weight: 400;
+ font-family: 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'YuGothic', '游ゴシック', 'メイリオ', Meiryo, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+
+ width: 100%;
+ font-variant-numeric: tabular-nums;
+ /* safari hover対策 */
+ -webkit-font-smoothing: antialiased;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+ display:block;
+}
+
+ul, ol {
+ list-style:none;
+}
+
+blockquote, q {
+ quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+ content:'';
+ content:none;
+}
+
+a {
+ margin:0;
+ padding:0;
+ vertical-align:baseline;
+ text-decoration: none;
+ color: inherit;
+}
+
+/* change colours to suit your needs */
+ins {
+ background-color:#ff9;
+ color:#000;
+ text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+ background-color:#ff9;
+ color:#000;
+ font-style:italic;
+ font-weight:bold;
+}
+
+del {
+ text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+ border-bottom:1px dotted;
+ cursor:help;
+}
+
+table {
+ border-collapse:collapse;
+ border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+ display:block;
+ height:1px;
+ border:0;
+ border-top:1px solid #cccccc;
+ margin:1em 0;
+ padding:0;
+}
+
+input, select {
+ vertical-align:middle;
+}
+
+img {
+ vertical-align: bottom;
+ line-height: 1.0;
+}
+
+button {
+ line-height: 1.0;
+ background-color: transparent;
+ border: none;
+ cursor: pointer;
+ outline: none;
+ padding: 0;
+ appearance: none;
 }
 
 
