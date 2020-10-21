@@ -8,27 +8,9 @@
   </head>
   <body>
     <%# ヘッダー %>
-    <div class = "heading">
-      <header>
-      <form method="get" action="#" class="search_container">
-        <input type="text" size="25" class = "input-text font-awesome" placeholder="&#xF002;　fashion検索">
-      </form>
-        <h1 class = "title"><a href= "/"> 
-        <%# <%= image_tag 'logo.png' %> 
-        </a></h1>
-      <div class = "navbar">
-        <ul class='nav-lists'>
-          <% if user_signed_in? %>
-             <li><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "nav ser-nickname" %></li> 
-             <li><%= link_to 'ログアウト', "/users/sign_out", method: :delete, class: "nav ogout" %></li>
-           <% else %>
-            <li><%= link_to 'ログイン', "/users/sign_in", class: "nav login" %></li>
-            <li><%= link_to '新規会員登録', "/users/sign_up", class: "nav sign-up" %></li>
-          <% end %> 
-        </ul>
-      </div>
-      </header>
-    </div>
+    <%= render "shared/header"%>
+    <%# ヘッダー %>
+
     <h2 class = "title-main"><i class="fas fa-camera-retro"></i> FASHION</h2>
     <%# <a href="/fashions/#{fashion/edit" class="btn-square-shadow">編集</a> %>
 
@@ -139,17 +121,8 @@
       </div>
     </div>
 
-<footer>
- <div class="copyright">
-	<p>© 2020 - METTRE</p>
- </div>
-  <div class="sns">
-	<%# <a href="#" class="contact">Contact</a> %>
-  <a href="#" class="youtube"><i class="fa fa-youtube fa-fw" aria-hidden="true"></i></a>
-	<a href="#" class="fb"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a>
-	<a href="https://twitter.com/kaito_yamaki" class="tw"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
-	<a href="https://www.instagram.com/kikng0526" class="insta"><i class="fa fa-instagram fa-fw" aria-hidden="true"></i></a>
-</div>
-</footer>
-
+    <%# フッター %>
+      <%= render "shared/footer"%>
+    <%# フッター %>
 </body>
+</html>

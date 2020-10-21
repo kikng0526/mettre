@@ -1,0 +1,28 @@
+main {
+  width: 100%;
+  min-height: 100vh
+}
+
+.profile {
+  height: 250px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  opacity: .9;
+}
+
+.user-profile {
+  padding-top: 100px;
+  margin-left: 250px;
+}
+
+.user-nickname {
+  font-size: 40px;
+  margin: 0;
+  color: black;
+}
+
+.user-username {
+  margin: 3px 0;
+  font-size: medium;
+}

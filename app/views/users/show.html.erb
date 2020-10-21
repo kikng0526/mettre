@@ -1,1 +1,50 @@
-<h1>hello world</h1>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>METTRE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="app/assets/stylesheets/new.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  </head>
+  <body>
+ <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<div class = "heading">
+      <header>
+      <form method="get" action="#" class="search_container">
+        <input type="text" size="25" class = "input-text font-awesome" placeholder="&#xF002;　fashion検索">
+      </form>
+        <h1 class = "title"><a href= "/"></a></h1>
+      <div class = "navbar">
+        <ul class='nav-lists'>
+          <% if user_signed_in? %>
+             <li><%= link_to 'トップページ', "/", class: "nav ser-nickname" %></li> 
+             <li><%= link_to 'ログアウト', "/users/sign_out", method: :delete, class: "nav ogout" %></li>
+           <% else %>
+            <li><%= link_to 'ログイン', "/users/sign_in", class: "nav login" %></li>
+            <li><%= link_to '新規会員登録', "/users/sign_up", class: "nav sign-up" %></li>
+          <% end %> 
+        </ul>
+      </div>
+      </header>
+    </div>
+
+  <main>
+    <div class = "profile">
+      <div class = "user-profile">
+        <p class = "user-nickname"><%= @user.nickname%></p>
+        <p class = "user-username">@<%= @user.username%></p>
+      </div>
+      <div class="edit-user">
+         <% if current_user === @user %>
+          <%= link_to 'プロフィール編集',  edit_user_registration_path(@user),method: :get, class: "btn-square-shadow"%>
+        <% end %>
+      </div>
+    </div>
+  </main>
+
+
+  <%# フッター %>
+   <%= render "shared/footer"%>
+  <%# フッター %>
+  </body>
+</html>
