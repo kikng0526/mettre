@@ -37,8 +37,29 @@
       <div class="edit-user">
          <% if current_user === @user %>
           <%= link_to 'プロフィール編集',  edit_user_registration_path(@user),method: :get, class: "btn-square-shadow"%>
-        <% end %>
+         <% end %>
       </div>
+    </div>
+    <div class = "main-fashion">
+      <div class = "new-fashion">
+        <% if current_user === @user %>
+          <%= link_to 'コーディネート投稿',  new_fashion_path(@fashion),method: :get, class: "btn-new btn-square-shadow"%>
+         <% end %>
+      </div>
+      <%# 内容 %>
+    <div class = "tab-container">
+      <div class="tabs">
+        <input id="all" type="radio" name="tab_item" checked>
+          <label class="tab_item" for="all">ALL</label>
+        <input id="programming" type="radio" name="tab_item">
+          <label class="tab_item" for="programming">MEN</label>
+        <input id="design" type="radio" name="tab_item">
+          <label class="tab_item" for="design">WOMEN</label>
+        <input id="design" type="radio" name="tab_item">
+          <label class="tab_item" for="design">WOMEN</label>
+      </div>
+     </div>
+      <%# 内容 %>
     </div>
   </main>
 

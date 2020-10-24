@@ -35,7 +35,7 @@ header {
 }
 
 .search_container{
- padding-left: 100px;
+  padding-left: 100px;
  
 }
 
@@ -89,26 +89,6 @@ li+ li {
 /* 検索ボタン */
 
 /* タグ */
-/*inputタグのチェックボックス非表示*/
- 
-
-/*メニューのデザイン*/
- 
-#content{
-  background-color: #fff;
-	opacity: .95;
-	width: 300px;
-	min-height: 100%;
-  margin-top: 300px;
-  z-index: 3;
-}
- 
-/*チェックが入ったら見せる*/
- 
-#input:checked ~ #content{
-	transform: translatex(0px);/*通常値に戻す*/
-}
-/* タグ */
 
 /*タブ切り替え全体のスタイル*/
 .tab-container {
@@ -121,8 +101,9 @@ li+ li {
   padding-bottom: 40px;
   background-color: #fff;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  width: 90%;
+  width: 70%;
   min-height: 50vh;
+  margin: 0 auto;
 }
   
 

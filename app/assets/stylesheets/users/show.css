@@ -26,3 +26,60 @@ main {
   margin: 3px 0;
   font-size: medium;
 }
+
+.edit-user {
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: 250px;
+}
+
+.edit-user .btn-square-shadow {
+  text-align: center;
+  text-decoration: none;
+  background: whitesmoke;/*ボタン色*/
+  color: gray;
+  border: 1px solid gray;
+  border-radius: 3px;
+  width: 130px;
+  height: 25px;
+  margin: 0;
+}
+
+.edit-user .btn-square-shadow:hover {
+  /*ボタンを押したとき*/
+  background-color: white;
+}
+
+.new-fashion {
+  text-align: center;
+}
+
+.btn-new {
+  width: 150px;
+  margin-top: 50px;
+  background-color: #2490d0;
+  color: white;
+  font-weight: bold;
+  padding: 10px 70px;
+}
+
+.btn-new:hover {
+  background-color: cornflowerblue;
+}
+
+.main-fashion .tabs{
+  margin-top: 0px;
+}
+
+.main-fashion .tab-container {
+  padding-top: 0px;
+}
+
+.main-fashion .tab_item {
+  width: calc(100%/4);
+}
+
+.main-fashion  #all{
+  width: 500px;
+}
+

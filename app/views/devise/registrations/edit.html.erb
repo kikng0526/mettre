@@ -9,7 +9,7 @@
     </div>
     <div class='account-page__inner--right user-form'>
       <%# <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= form_with model: @user do |f|%>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         
         <div class='field'>
           <div class='field-label'>
@@ -36,23 +36,6 @@
           </div>
           <div class='field-input'>
             <%= f.email_field :email, :placeholder => "email" %>
-          </div>
-        </div>
-        <div class='field'>
-          <div class='field-label'>
-            <i class="fas fa-unlock-alt"></i>
-            <%= f.label :password%>
-          </div>
-          <div class='field-input'>
-            <%= f.password_field :password, :placeholder => "半角英数字混合8文字以上", autocomplete: "off"%>
-          </div>
-        </div>
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :password_confirmation%>
-          </div>
-          <div class='field-input'>
-            <%= f.password_field :password_confirmation, autocomplete: "off"%>
           </div>
         </div>
         <div class='actions'>
